@@ -1,0 +1,5 @@
+.item_box{
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+}
