@@ -3,3 +3,18 @@
     display: flex;
     flex-wrap: wrap;
 }
+.no_item{
+    width: 100%;
+    color: #2F2E41;
+    word-spacing: 4px;
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 100px;
+    opacity: 0.8;
+}
+.no_item img{
+    width: 40%;
+}

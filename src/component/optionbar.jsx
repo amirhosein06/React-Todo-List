@@ -1,6 +1,17 @@
 import '../css/optionbar.css';
+import { useContext,useState } from "react";
+import Context from "./context/context";
 
 const OptionBar = () => {
+    const context = useContext(Context);
+
+    const handlenewitem = ()=>{
+        context.createstausset(true);
+    }
+    const handleremovall = ()=>{
+        context.dataset([]);
+    }
+
     return ( 
         <div className="option_container">
 
@@ -13,11 +24,11 @@ const OptionBar = () => {
 
 
             <div>
-                <button className="btn btn-outline-danger"><i className="bi bi-trash"></i> Remove all</button>
+                <button className="btn btn-outline-danger" onClick={handleremovall}><i className="bi bi-trash"></i> Remove all</button>
             </div>
 
             <div>
-                <button className="btn btn-outline-primary"><i className="bi bi-plus-lg"></i> Add new item</button>
+                <button className="btn btn-outline-primary" onClick={handlenewitem}><i className="bi bi-plus-lg"></i> Add new item</button>
             </div>
             
             <select class="form-select select_box" aria-label="Default select example">

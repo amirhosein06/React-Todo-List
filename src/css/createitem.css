@@ -1,0 +1,86 @@
+.blurback{
+    width: 100%;
+    height: 95vh;
+    position: absolute;
+    backdrop-filter: blur(2px);
+    background-color: #ffffff28;
+    z-index: 4;
+}
+.create_container{
+    width: 35%;
+    position: absolute;
+    height: 200px;
+    top: calc(50% - 170px);
+    left: 32.5%;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: #0000003d 0px 1px 10px;
+    padding: 15px;
+    padding-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(8,1fr);
+    grid-template-rows: repeat(7,1fr);
+    gap: 7px;
+}
+.left{
+    grid-column: 1/5;
+    grid-row: 1/6;
+}
+.right{
+    grid-column: 5/-1;
+    grid-row: 1/6;
+}
+.bottom{
+    grid-column: 1/-1;
+    grid-row: 6/-1;
+}
+
+.left input{
+    width: 100%;
+    height: 40px;
+}
+.left input::placeholder{
+    color: #d9534f;
+    font-size: 14px;
+}
+.right textarea{
+    width: 100%;
+    height: 80%;
+    resize: none;
+}
+.bottom button{
+    width: 100%;
+    height: 100%;
+}
+label{
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: 400;
+    color: #616161;
+}
+.color_box{
+    display: flex;
+    align-items: center;
+    margin-top: 13px;
+    width: 100%;
+}
+.color_box select{
+    width: 100% !important;
+    height: 100%;
+    margin-left: 10px;
+}
+.left option{
+    color: #fff;
+}
+.close_btn{
+    background-color: #fff !important;
+    width: 30px !important;
+    height: 30px !important;
+    position: absolute;
+    top: -8px;
+    left: 95%;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: #0000003d 0px 1px 3px;
+}

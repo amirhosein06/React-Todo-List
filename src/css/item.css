@@ -42,7 +42,7 @@
     justify-content: center;
     font-size: 18px;
     border-radius: 5px;
-    border: 1px solid #eee;
+    border: 1px solid #e0e0e0;
 }
 .btn-box .btn:nth-child(2){
     font-size: 13px;
