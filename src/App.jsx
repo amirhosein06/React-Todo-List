@@ -7,7 +7,7 @@ import CreateItem from "./component/createitem";
 function App() {
   const [datalist, setdatalist] = useState([
     {
-      id: 0,
+      id: 1,
       name: "egg",
       descraption: "helo",
       color: "danger",

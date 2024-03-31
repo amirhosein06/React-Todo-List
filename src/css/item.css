@@ -47,3 +47,6 @@
 .btn-box .btn:nth-child(2){
     font-size: 13px;
 }
+*:disabled{
+    border: 1px solid #8080802d !important;
+}
