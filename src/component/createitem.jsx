@@ -1,13 +1,21 @@
 import '../css/createitem.css';
-import { useRef,useState,useContext } from 'react';
+import { useRef,useState,useContext,useEffect } from 'react';
 import Context from "./context/context";
 
 const CreateItem = () => {
     const nameinput = useRef();
+    const colorinput = useRef();
     const [selectval, setselectval] = useState(["default","#777"]);
     const [nameval, setnameval] = useState("");
     const [areaval, setareaval] = useState("");
     const context = useContext(Context);
+
+    useEffect(()=>{
+        if (context.inputsDevalue !== "") {
+            setnameval(context.inputsDevalue.nameval);
+            setareaval(context.inputsDevalue.desval);
+        }
+    },[])
 
     const handleselect = (e)=>{
         const val = e.target.value;
@@ -16,6 +24,7 @@ const CreateItem = () => {
     }
     const closing = ()=>{
         context.createstausset(false);
+        context.inputsDevalueset("");
     }
     const handlenamechange = (e)=>{
         setnameval(e.target.value);
@@ -27,6 +36,7 @@ const CreateItem = () => {
         if (!nameval || nameval === " ") {
             nameinput.current.placeholder = "please fill out this input !";
         }else{
+            if (context.inputsDevalue === "") {
             const time = new Date();
             const createdData = {
                 id: context.datalist.length +1,
@@ -39,6 +49,22 @@ const CreateItem = () => {
             const newdata = [...context.datalist,createdData];
             context.dataset(newdata);
             context.createstausset(false);
+            context.inputsDevalueset("");
+            }else{
+                const time = new Date();
+                const createddata = [...context.datalist];
+                createddata[context.inputsDevalue.id -1] = {
+                    id: context.inputsDevalue.id,
+                    name: nameval,
+                    descraption: areaval,
+                    color: selectval[0],
+                    date: time.toLocaleString(),
+                    status: "active"
+                }
+                context.dataset(createddata);
+                context.createstausset(false);
+                context.inputsDevalueset("");
+            }
         }
     }
 
@@ -49,11 +75,11 @@ const CreateItem = () => {
 
            <div className="left">
             <label htmlFor="name">Name: *</label>
-            <input type='text' ref={nameinput} className='form-control' id='name' maxLength={25} value={nameval} onChange={handlenamechange}/>
+            <input type='text' ref={nameinput} className='form-control' id='name' maxLength={14} value={nameval} onChange={handlenamechange}/>
 
             <div className="color_box">
             <label htmlFor="color">Color:</label>
-            <select value={selectval} onChange={handleselect} style={{color: selectval[1]}} class="form-select select_box" aria-label="Default select example" id='color'>
+            <select ref={colorinput} value={selectval} onChange={handleselect} style={{color: selectval[1]}} class="form-select select_box" aria-label="Default select example" id='color'>
                <option value={["default","#777"]}  style={{background:"#777"}} selected>default</option>
                <option value={["primary","#428bca"]} style={{background:"#428bca"}}>primary</option>
                <option value={["success","#5cb85c"]} style={{background:"#5cb85c"}}>success</option>

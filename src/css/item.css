@@ -3,6 +3,7 @@
     height: 100px;
     margin-inline: 0.5%;
     display: flex;
+    background-color: #fff;
 }
 .text_box{
     display: flex;

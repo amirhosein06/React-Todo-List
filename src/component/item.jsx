@@ -20,12 +20,20 @@ const Item = ({data}) => {
        const newdata = context.datalist;
        newdata[data.id -1].status = "complete";
        context.dataset(newdata);
-       console.log(context.datalist);
     }
     const handledelete = ()=>{
         const iseven = i => i.id !== data.id;
         const newdata= context.datalist.filter(iseven);
-       context.dataset(newdata);
+        context.dataset(newdata);
+    }
+    const handleEdit =()=>{
+        context.createstausset(true);
+        context.inputsDevalueset({
+            nameval: data.name,
+            desval: data.descraption,
+            colorval: data.color,
+            id: data.id
+        })
     }
 
     return ( 
@@ -38,7 +46,7 @@ const Item = ({data}) => {
 
             <div className="btn-box">
                 <button className='btn btn-outline-success' onClick={handleCheck} disabled={Checked}><i class="bi bi-check-lg"></i></button>
-                <button className='btn btn-outline-primary' disabled={Checked}><i class="bi bi-pencil-square"></i></button>
+                <button className='btn btn-outline-primary' disabled={Checked} onClick={handleEdit}><i class="bi bi-pencil-square"></i></button>
                 <button className='btn btn-outline-danger' ref={Xbutton} onClick={handledelete}><i class="bi bi-x"></i></button>
             </div>
         </div>
