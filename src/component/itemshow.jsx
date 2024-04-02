@@ -14,8 +14,8 @@ const ItemShow = () => {
                     <h4>No items have been added !</h4>
                 </div>
             ):(
-                context.datalist.map((item)=>(
-                    <Item data={item}/>
+                context.datalist.map((item,index)=>(
+                    <Item key={index} data={item}/>
                 ))
             )}
         </div>
