@@ -71,7 +71,7 @@ const CreateItem = () => {
     return ( 
        <div className="blurback">
                 <div className='create_container'>
-                    <div className="close_btn btn" onClick={closing}><i class="bi bi-x"></i></div>
+                    <div className="close_btn btn" onClick={closing}><i className="bi bi-x"></i></div>
 
            <div className="left">
             <label htmlFor="name">Name: *</label>
@@ -79,7 +79,7 @@ const CreateItem = () => {
 
             <div className="color_box">
             <label htmlFor="color">Color:</label>
-            <select ref={colorinput} value={selectval} onChange={handleselect} style={{color: selectval[1]}} class="form-select select_box" aria-label="Default select example" id='color'>
+            <select ref={colorinput} value={selectval} onChange={handleselect} style={{color: selectval[1]}} className="form-select select_box" aria-label="Default select example" id='color'>
                <option value={["default","#777"]}  style={{background:"#777"}} selected>default</option>
                <option value={["primary","#428bca"]} style={{background:"#428bca"}}>primary</option>
                <option value={["success","#5cb85c"]} style={{background:"#5cb85c"}}>success</option>

@@ -17,6 +17,9 @@ function App() {
   ]);
   const [Createstatus, setCreatestatus] = useState(false);
   const [inputsDevalue, setinputsDevalue] = useState("");
+  const [searchVal, setsearchVal] = useState("");
+  const [statusval, setstatusval] = useState("All");
+
   return (
     <Context.Provider value={{
       datalist: datalist,
@@ -24,7 +27,11 @@ function App() {
       createstaus: Createstatus,
       createstausset: setCreatestatus,
       inputsDevalue: inputsDevalue,
-      inputsDevalueset: setinputsDevalue
+      inputsDevalueset: setinputsDevalue,
+      searchVal: searchVal,
+      searchValset: setsearchVal,
+      statusval: statusval,
+      statusvalset: setstatusval
     }}>
       <OptionBar/>
       {Createstatus && (<CreateItem/>)}

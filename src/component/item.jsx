@@ -11,14 +11,28 @@ const Item = ({data}) => {
     const context = useContext(Context);
 
     // buggggg !!!!!!!!!!!!!!!!!!!!!!!!
+    
+    const handlecheck = ()=>{
+        const newdata = [...context.datalist];
+        const indexed =  newdata.indexOf(data);
+        newdata[indexed].status = "complete";
+        context.dataset(newdata);
 
+        setChecked(true);
+        nametext.current.style.textDecoration = "line-through";
+        itemBox.current.style.opacity = "0.5";
+        Xbutton.current.classList.remove("btn-outline-danger");
+        Xbutton.current.classList.add("bg-danger");
+        Xbutton.current.classList.add("text-white");
+    };
     const handledelete = ()=>{
         const iseven = i => i.id !== data.id;
         const newdata = [...context.datalist];
         const filteredarray = newdata.filter(iseven);
         context.dataset(filteredarray);
+        console.log(filteredarray);
 
-        if (data.status !== "complete") {
+        if (data.status === "complete") {
         setChecked(false);
         nametext.current.style.textDecoration = "none";
         itemBox.current.style.opacity = "1";
@@ -35,19 +49,6 @@ const Item = ({data}) => {
             colorval: data.color,
             id: data.id
         })
-    };
-    const handlecheck = ()=>{
-        const newdata = [...context.datalist];
-        const indexed =  newdata.indexOf(i=>i.id === data.id);
-        newdata[indexed + 2].status = "complete";
-        context.dataset(newdata);
-
-        setChecked(true);
-        nametext.current.style.textDecoration = "line-through";
-        itemBox.current.style.opacity = "0.5";
-        Xbutton.current.classList.remove("btn-outline-danger");
-        Xbutton.current.classList.add("bg-danger");
-        Xbutton.current.classList.add("text-white");
     };
 
     return ( 
