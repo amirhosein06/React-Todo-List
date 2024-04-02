@@ -10,7 +10,23 @@ const Item = ({data}) => {
     const [Checked, setChecked] = useState(false);
     const context = useContext(Context);
 
-    // buggggg !!!!!!!!!!!!!!!!!!!!!!!!
+    useEffect(()=>{
+        if (data.status === "complete") {
+            setChecked(true);
+            nametext.current.style.textDecoration = "line-through";
+            itemBox.current.style.opacity = "0.5";
+            Xbutton.current.classList.remove("btn-outline-danger");
+            Xbutton.current.classList.add("bg-danger");
+            Xbutton.current.classList.add("text-white");
+        }else{
+            setChecked(false);
+            nametext.current.style.textDecoration = "none";
+            itemBox.current.style.opacity = "1";
+            Xbutton.current.classList.add("btn-outline-danger");
+            Xbutton.current.classList.remove("bg-danger");
+            Xbutton.current.classList.remove("text-white");
+        }
+    })
     
     const handlecheck = ()=>{
         const newdata = [...context.datalist];
@@ -32,14 +48,6 @@ const Item = ({data}) => {
         context.dataset(filteredarray);
         console.log(filteredarray);
 
-        if (data.status === "complete") {
-        setChecked(false);
-        nametext.current.style.textDecoration = "none";
-        itemBox.current.style.opacity = "1";
-        Xbutton.current.classList.add("btn-outline-danger");
-        Xbutton.current.classList.remove("bg-danger");
-        Xbutton.current.classList.remove("text-white");
-        }
     };
     const handleEdit =()=>{
         context.createstausset(true);
