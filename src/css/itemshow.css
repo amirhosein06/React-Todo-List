@@ -18,3 +18,25 @@
 .no_item img{
     width: 40%;
 }
+
+/* for tablet */
+@media screen and (max-width: 1140px) {
+    .item_box{
+        width: 96%;
+    }
+}
+
+/* for mobile */
+@media screen and (max-width: 765px) {
+    .item_box{
+        width: 92%;
+    }
+    .no_item h4{
+        font-size: 17px !important;
+        word-spacing: 1px;
+        text-align: center;
+    }
+    .no_item img{
+        width: 90%;
+    }
+}

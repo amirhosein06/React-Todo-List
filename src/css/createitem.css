@@ -84,3 +84,90 @@ label{
     justify-content: center !important;
     box-shadow: #0000003d 0px 1px 3px;
 }
+
+/* for tablet */
+@media screen and (max-width: 1140px) {
+    .create_container{
+        width: 96%;
+        position: absolute;
+        height: 300px;
+        top: calc(50% - 200px);
+        left: 2%;
+        z-index: 8 !important;
+    }
+    .close_btn{
+        width: 45px !important;
+        height: 45px !important;
+        top: -20px;
+        left: 94%;
+        font-size: 27px !important;
+    }
+    .bottom button{
+        font-size: 28px;
+    }
+    label{
+        font-size: 22px;
+        color: #5E5D71;
+    }
+    .color_box{
+        margin-top: 30px;
+        width: 100%;
+    }
+    .right textarea{
+        border: 1px solid #686874;
+        font-size:25px;
+    }
+    .left input{
+        border: 1px solid #686874;
+        height: 60px;
+        font-size:25px;
+    }
+    .color_box select{
+        height: 60px;
+        font-size: 25px;
+        border: 1px solid #686874;
+        order: 10;
+    }
+    .left input::placeholder{
+        font-size: 25px;
+    }
+}
+
+/* for mobile */
+@media screen and (max-width: 500px) {
+    .create_container{
+        width: 92%;
+        height: 500px;
+        top: calc(50% - 250px);
+        left: 4%;
+        z-index: 8 !important;
+    }
+    .close_btn{
+        width: 50px !important;
+        height: 50px !important;
+        top: -25px;
+        left: 84%;
+        font-size: 30px !important;
+    }
+    .left{
+        grid-column: 1/-1;
+        grid-row: 1/4;
+    }
+    .right{
+        grid-column: 1/-1;
+        grid-row: 4/7;
+    }
+    .bottom{
+        grid-column: 1/-1;
+        grid-row: 7/-1;
+    }
+    .left input::placeholder{
+        font-size: 20px;
+    }
+    .right textarea{
+        font-size:20px;
+    }
+    .left input{
+        font-size:20px;
+    }
+}

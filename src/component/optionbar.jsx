@@ -31,20 +31,20 @@ const OptionBar = () => {
              <input type="search" className="w-25 search_input form-control"
               placeholder="Search..." aria-describedby="searchinput" value={Sinputval} onChange={handlesearch}/>
              <div className="input-group-prepend">
-             <span className="input-group-text btn bg-primary text-white search_btn" id="searchinput"><i className="bi bi-search"></i></span>
+             <span className="input-group-text btn  text-white search_btn" id="searchinput"><i className="bi bi-search"></i></span>
              </div>
              </div>
 
 
-            <div>
+            <div className='btn_box'>
                 <button className="btn btn-outline-danger" onClick={handleremovall}><i className="bi bi-trash"></i> Remove all</button>
             </div>
 
-            <div>
+            <div className='btn_box'>
                 <button className="btn btn-outline-primary" onClick={handlenewitem}><i className="bi bi-plus-lg"></i> Add new item</button>
             </div>
             
-            <select class="form-select select_box" aria-label="Default select example" value={Tinputval} onChange={handlestatuschange}>
+            <select className="form-select select_box" aria-label="Default select example" value={Tinputval} onChange={handlestatuschange}>
                <option value="All" selected>All</option>
                <option value="complete">Complete</option>
                <option value="active">active</option>

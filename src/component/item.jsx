@@ -64,8 +64,8 @@ const Item = ({data}) => {
 
             <div className="text_box">
             <h6 ref={nametext}>{data.name}<span className='badge text-secondary' title={data.date}><i class="bi bi-clock"></i></span></h6>
-            <p>{data.descraption}</p>
             </div>
+            <p className='m-0'>{data.descraption}</p>
 
             <div className="btn-box">
                 <button className='btn btn-outline-success' onClick={handlecheck} disabled={Checked}><i class="bi bi-check-lg"></i></button>

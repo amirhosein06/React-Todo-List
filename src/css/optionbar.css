@@ -7,7 +7,11 @@
     border-radius: 10px;
     gap: 5%;
     box-shadow: #32325d40 0px 1px 3px -1px, #0000004d 0px 1px 3px -1px;
+    box-shadow: 0 3px 10px #00000033;
     background-color: #fff;
+    border-top-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border: 1px solid #5E5D71;
 }
 .input_box{
     width: 30% !important;
@@ -18,4 +22,99 @@
 .search_btn{
     border-top-left-radius: 0 !important;
     border-bottom-left-radius: 0 !important;
+    background-color: #5E5D71 !important;
+}
+.option_container .btn_box .btn:hover{
+    color: #fff;
+}
+
+/* for tablet */
+@media screen and (max-width: 1140px) {
+    .option_container{
+        width: 96%;
+        height: 130px !important;
+        box-shadow: #32325d40 0px 1px 5px -1px, #0000004d 0px 1px 3px -1px;
+        gap: 2%;
+    }
+    .input_box{
+        width: 33% !important;
+        height: 48px;
+    }
+    .select_box{
+        width: 23% !important;
+        height: 48px;
+    }
+    .option_container .btn_box{
+        width: 17%;
+        height: 48px;
+    }
+    .option_container .btn_box .btn{
+        width: 100%;
+        height: 48px;
+    }
+    .search_btn{
+        height: 48px;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+}
+@media screen and (max-width: 910px) {
+    .option_container{
+        height: 100px !important;
+        gap: 1%;
+    }
+    .input_box{
+        width: 35% !important;
+    }
+    .select_box{
+        width: 18% !important;
+    }
+    .option_container .btn_box{
+        width: 20%;
+    }
+}
+
+/* for mobile */
+@media screen and (max-width: 765px) {
+    .option_container{
+        width: 92%;
+        height: 130px !important;
+        gap: 3%;
+        flex-wrap: wrap;
+        padding: 6px 0;
+    }
+    .input_box{
+        width: 61% !important;
+        order: -2;
+    }
+    .select_box{
+        width: 31% !important;
+        order: -1;
+    }
+    .option_container .btn_box{
+        width: 46%;
+    }
+    .option_container input , .option_container select{
+        border: #5E5D71 solid 1px;
+    }
+    .option_container .btn-outline-danger{
+        background-color: #DC3545 !important;
+        color: #fff;
+    }
+    .option_container .btn-outline-primary{
+        background-color: #0D6EFD !important;
+        color: #fff;
+    }
+    .option_container .btn_box .btn:active{
+        scale: 0.9;
+    }
+}
+@media screen and (max-width: 350px) {
+    .option_container{
+        width: 97%;
+    }
+    .option_container .btn_box .btn{
+        font-size: 13px;
+    }
 }

@@ -5,16 +5,7 @@ import Context from "./component/context/context";
 import CreateItem from "./component/createitem";
 
 function App() {
-  const [datalist, setdatalist] = useState([
-    {
-      id: 1,
-      name: "egg",
-      descraption: "helo",
-      color: "danger",
-      date: "10:20 , 2024/8/2",
-      status: "active"
-    }
-  ]);
+  const [datalist, setdatalist] = useState([]);
   const [Createstatus, setCreatestatus] = useState(false);
   const [inputsDevalue, setinputsDevalue] = useState("");
   const [searchVal, setsearchVal] = useState("");
